@@ -54,10 +54,39 @@ plus.onclick = function() {
 };
 
 equal.onclick = function() {
-	let operand1 = queue[0];
-	let operator = queue[1];
-	let operand2 = queue[2];
-	// TODO: 足し算決め打ちなので演算子ごとに変更できるようにする
-	let result = operand1 + operand2;
+	let operand1 = [];
+	let operator = '';
+	let operand2 = [];
+	let isFound = false;
+	queue.forEach(function(value) {
+		if(!isFound) {
+			if (value != 'plus') {
+				operand1.push(value);
+			} else {
+				isFound = true;
+				operator = value;
+			}
+		} else {
+			operand2.push(value);
+		}
+	});
+
+	const digit1 = operand1.length;
+	let x = 0.0;
+	for (let i = 0; i < digit1; i++) {
+		x += 10 ** (digit1 - 1 - i) * operand1[i];
+	}
+
+	const digit2 = operand2.length;
+	let y = 0.0;
+	for (let i = 0; i < digit2; i++) {
+		y += 10 ** (digit2 - 1 - i) * operand2[i];
+	}
+
+	let result = 0.0;
+	if(operator == 'plus') {
+		result = x + y;
+		console.log(result);
+	}
 	document.getElementById('result').innerHTML = result;
 };
