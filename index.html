@@ -5,36 +5,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="./app/css/style.css">
+	<script src="calculate.js"></script>
 	<title>電卓</title>
 </head>
 <body>
-	<main>
-		<div id="result">
-			0
-		</div>
-		<table>
+<form name="result">
+	<table>
+		<tr>
+			<td colspan="3"><input type="text" name="text"></td>
+		</tr>
 			<tr>
-				<td><button type="button" id='seven'>7</button></td>
-				<td><button type="button" id='eight'>8</button></td>
-				<td><button type="button" id='nine'>9</button></td>
+				<td>
+					<button type="button" onClick="calc('7')">7</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('8')">8</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('9')">9</button>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" id='four'>4</button></td>
-				<td><button type="button" id='five'>5</button></td>
-				<td><button type="button" id='six'>6</button></td>
+				<td>
+					<button type="button" onClick="calc('4')">4</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('5')">5</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('6')">6</button>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" id='one'>1</button></td>
-				<td><button type="button" id='two'>2</button></td>
-				<td><button type="button" id='three'>3</button></td>
+				<td>
+					<button type="button" onClick="calc('1')">1</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('2')">2</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('3')">3</button>
+				</td>
 			</tr>
 			<tr>
-				<td><button type="button" id='zero'>0</button></td>
-				<td><button type="button" id="equal">=</button></td>
-				<td><button type="button" id='plus'>+</button></td>
+				<td>
+					<button type="button" onClick="calc('0')">0</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('+')">+</button>
+				</td>
+				<td>
+					<button type="button" onClick="calc('=')">=</button>
+				</td>
 			</tr>
-		</table>
-	</main>
-	<script src="calculate.js"></script>
+	</table>
+</form>
 </body>
 </html>
